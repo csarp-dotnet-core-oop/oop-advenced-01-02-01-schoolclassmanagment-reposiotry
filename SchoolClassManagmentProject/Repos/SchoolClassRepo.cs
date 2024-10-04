@@ -26,14 +26,14 @@ namespace SchoolClassManagmentProject.Repos
             }
         }
 
-        public List<SchoolClass> GetSchoolClassesPerGrade(int grade)
+        public List<SchoolClass> GetSchoolClasses(int grade)
         {
             return _schoolClasses.Where(schoolClass => schoolClass.Grade == grade).ToList();
         }
-
+ 
         public int GetNumberOfSchoolClassesPerGrade(int grade)
         {
-            return GetSchoolClassesPerGrade(grade).Count;
+            return GetSchoolClasses(grade).Count;
         }
 
         public List<SchoolClass> GetGraduateClasses()
