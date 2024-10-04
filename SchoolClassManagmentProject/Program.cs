@@ -40,12 +40,22 @@ schoolClassRepo.Add(schoolClass13b);
 Console.WriteLine($"Iskolában az osztályok száma: {schoolClassRepo.NumberOfSchoolClasses}");
 Console.WriteLine($"Iskolában a végzős osztályok száma: {schoolClassRepo.NumberOfGraduateClasses}");
 
+Console.WriteLine("9. évfolyamoksok:");
+List<SchoolClass> schoolClasses9 = schoolClassRepo.GetSchoolClasses(9);
+foreach (SchoolClass schoolClass in schoolClasses9)
+    Console.WriteLine($"{schoolClass.Name}");
+
+Console.WriteLine(schoolClassRepo.GetNumberOfSchoolClassesPerGrade(9));
+
 Console.WriteLine("Végzős osztályok:");
 List<SchoolClass> gradeteClasses=schoolClassRepo.GetGraduateClasses();
 foreach(SchoolClass graduateClass in gradeteClasses)
-    Console.WriteLine(graduateClass);
+    Console.WriteLine($"{graduateClass.Name}");
 
-
+Console.WriteLine("Évfolyamok:");
+List<byte> grades = schoolClassRepo.GetGrades();
+foreach (byte garade in grades)
+    Console.WriteLine(garade);
 
 int exsistingClassClassMoneyPerStudentInOneYear = schoolClassRepo.GetClassMoneyPerStudentInOneYear(10, 'b');
 Console.WriteLine($"10.a osztáybevétele egy évben egy diák által:{exsistingClassClassMoneyPerStudentInOneYear}");
