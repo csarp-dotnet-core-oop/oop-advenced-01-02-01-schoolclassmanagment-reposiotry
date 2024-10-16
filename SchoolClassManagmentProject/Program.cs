@@ -40,6 +40,10 @@ schoolClassRepo.Add(schoolClass13b);
 Console.WriteLine($"Iskolában az osztályok száma: {schoolClassRepo.NumberOfSchoolClasses}");
 Console.WriteLine($"Iskolában a végzős osztályok száma: {schoolClassRepo.NumberOfGraduateClasses}");
 
+schoolClassRepo.Remove(10, 'b');
+
+Console.WriteLine($"Iskolában az osztályok száma: {schoolClassRepo.NumberOfSchoolClasses}");
+
 Console.WriteLine("9. évfolyamoksok:");
 List<SchoolClass> schoolClasses9 = schoolClassRepo.GetSchoolClasses(9);
 foreach (SchoolClass schoolClass in schoolClasses9)

@@ -20,7 +20,7 @@ namespace SchoolClassManagmentProject.Repos
         public void Remove(int grade, char gradeLetter)
         {
             SchoolClass? schoolClassToRemove = _schoolClasses.Find(schoolClass => schoolClass.Grade == grade && schoolClass.GradeLetter == gradeLetter);
-            if (schoolClassToRemove is not null)
+            if (schoolClassToRemove is not null || schoolClassToRemove != default(SchoolClass))
             {
                 _schoolClasses.Remove(schoolClassToRemove);
             }
