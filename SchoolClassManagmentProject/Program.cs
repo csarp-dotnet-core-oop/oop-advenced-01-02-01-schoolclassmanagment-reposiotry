@@ -61,9 +61,10 @@ List<byte> grades = schoolClassRepo.GetGrades();
 foreach (byte garade in grades)
     Console.WriteLine(garade);
 
-int exsistingClassClassMoneyPerStudentInOneYear = schoolClassRepo.GetClassMoneyPerStudentInOneYear(10, 'b');
+schoolClass12a.SetClassMoney(10000);
+int exsistingClassClassMoneyPerStudentInOneYear = schoolClassRepo.GetClassMoneyPerStudentInOneYear(12, 'a');
 Console.WriteLine($"10.a osztáybevétele egy évben egy diák által:{exsistingClassClassMoneyPerStudentInOneYear}");
 
-int nonExsistingClassClassMoneyPerStudentInOneYear = schoolClassRepo.GetClassMoneyPerStudentInOneYear(-1, 'z');
+int nonExsistingClassClassMoneyPerStudentInOneYear = schoolClassRepo.GetClassMoneyPerStudentInOneYear(255, 'z');
 Console.WriteLine($"10.a osztáybevétele egy évben egy diák által:{nonExsistingClassClassMoneyPerStudentInOneYear}");
 
